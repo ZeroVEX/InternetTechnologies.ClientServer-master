@@ -51,7 +51,14 @@ namespace InternetTechnologies.Client.ConsoleUI.Models.Facades
             {
                 var item = await _service.GetAsync(id);
 
-                PrintItem(item);
+                if(item != null)
+                {
+                    PrintItem(item);
+                }
+                else
+                {
+                    _outStream.WriteLine($"There's no {typeof(T).Name}");
+                }
             }
             else
             {

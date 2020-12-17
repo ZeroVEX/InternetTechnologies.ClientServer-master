@@ -2,6 +2,7 @@
 using InternetTechnologies.DomainModels.Models.Entities;
 using InternetTechnologies.DomainModels.Services.Interfaces;
 using InternetTechnologies.Server.DAL.Services.Repositories.XmlRepositories;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace InternetTechnologies.Server.DAL.Models
 {
@@ -21,6 +22,27 @@ namespace InternetTechnologies.Server.DAL.Models
 
 
             return containerBuilder;
+        }
+
+        public static IServiceCollection GetServiceCollection(string pathToFile)
+        {
+            var services = new ServiceCollection();
+
+            services.ConfigureServices(pathToFile);
+
+            return services;
+        }
+
+        public static IServiceCollection ConfigureServices(this IServiceCollection services, string pathToFile)
+        {
+            services.AddTransient<MedicalCard>();
+
+            services.AddScoped(typeof(IRepository<MedicalCard>), provider => 
+            {
+                return new MedicalCardXmlRepository(pathToFile);
+            });
+
+            return services;
         }
     }
 }

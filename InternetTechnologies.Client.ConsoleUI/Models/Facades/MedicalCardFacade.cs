@@ -32,11 +32,6 @@ namespace InternetTechnologies.Client.ConsoleUI.Models.Facades
             medicalCard.Year = int.Parse(_inStream.ReadLine());
             _outStream.WriteLine($"Input {nameof(MedicalCardDto.Blood)}:");
             medicalCard.Blood = (Blood)Enum.Parse(typeof(Blood), _inStream.ReadLine());
-            //medicalCard.Name = "123";
-            //medicalCard.Weigth = 123;
-            //medicalCard.Growth = 123;
-            //medicalCard.Year = 123;
-            //medicalCard.Blood = Blood.First;
 
             return medicalCard;
         }

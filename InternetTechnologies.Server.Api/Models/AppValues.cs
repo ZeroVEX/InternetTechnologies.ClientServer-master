@@ -20,6 +20,6 @@
 
         public const double WeightMinValue = default;
 
-        public const double WeightMaxValue = 3;
+        public const double WeightMaxValue = double.MaxValue;
     }
 }

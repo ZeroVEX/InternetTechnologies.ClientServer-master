@@ -10,7 +10,7 @@ namespace InternetTechnologies.Client.BLL.Models.Factory
 {
     public static class DataAccessFactory
     {
-        public static DataAccess GetDataAccess(string host = default, int port = default)
+        public static DataAccess GetDataAccess(string host = default, int port = default, string apiAddress = default)
         {
             DataAccessFromDal dalDataAccess = null;
 
@@ -18,7 +18,7 @@ namespace InternetTechnologies.Client.BLL.Models.Factory
                                                         => config.AddProfile(new MapperProfile()))
                                                                                                 .CreateMapper();
 
-            dalDataAccess = FactoryFromDal.GetDataAccess(host, port);
+            dalDataAccess = FactoryFromDal.GetDataAccess(host, port, apiAddress);
 
             return new DataAccess(
                  new GenericService<MedicalCardDto, MedicalCard>(

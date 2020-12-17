@@ -1,5 +1,4 @@
-﻿using InternetTechnologies.Client.BLL.Models.DTO;
-using InternetTechnologies.Client.ConsoleUI.Models.Facades;
+﻿using InternetTechnologies.Client.ConsoleUI.Models.Facades;
 using System;
 
 namespace InternetTechnologies.Client.ConsoleUI.Models
