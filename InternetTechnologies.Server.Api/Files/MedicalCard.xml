@@ -98,13 +98,6 @@
     <Weigth>123</Weigth>
     <Blood>First</Blood>
   </MedicalCard>
-  <MedicalCard Id="15">
-    <Name>123</Name>
-    <Year>123</Year>
-    <Growth>123</Growth>
-    <Weigth>123</Weigth>
-    <Blood>First</Blood>
-  </MedicalCard>
   <MedicalCard Id="16">
     <Name>123</Name>
     <Year>123</Year>
@@ -3493,11 +3486,18 @@
     <Weigth>123</Weigth>
     <Blood>First</Blood>
   </MedicalCard>
-  <MedicalCard Id="927">
-    <Name>SlavaUkraini</Name>
-    <Year>228</Year>
-    <Growth>45</Growth>
-    <Weigth>3</Weigth>
+  <MedicalCard Id="928">
+    <Name>Don Pavleoni</Name>
+    <Year>1999</Year>
+    <Growth>228</Growth>
+    <Weigth>45</Weigth>
     <Blood>Second</Blood>
+  </MedicalCard>
+  <MedicalCard Id="929">
+    <Name>Pavlentiy Svinuchelli</Name>
+    <Year>1999</Year>
+    <Growth>228</Growth>
+    <Weigth>45</Weigth>
+    <Blood>First</Blood>
   </MedicalCard>
 </MedicalCards>

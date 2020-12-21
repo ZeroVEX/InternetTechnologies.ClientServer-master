@@ -16,8 +16,7 @@ namespace InternetTechnologies.Server.Api
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
-                    webBuilder.UseStartup<Startup>()
-                              .UseKestrel();
+                    webBuilder.UseStartup<Startup>();
                 });
     }
 }
