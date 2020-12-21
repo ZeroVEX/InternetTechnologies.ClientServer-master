@@ -25,7 +25,7 @@ namespace InternetTechnologies.Server.Api.Controllers
 
             await _repository.CreateAsync(model);
 
-            return CreatedAtAction(nameof(Post), model);
+            return CreatedAtAction(nameof(Post), model); // 201 HTTP StatusCode
         }
 
         [HttpGet("{id}")]
@@ -37,10 +37,10 @@ namespace InternetTechnologies.Server.Api.Controllers
             {
                 var dtoModel = model.ToDto();
 
-                return Ok(dtoModel);
+                return Ok(dtoModel); // 200 HTTP StatusCode
             }
 
-            return NoContent();
+            return NoContent(); // 204 HTTP StatusCode
         }
 
         [HttpPut("{id}")]
@@ -54,10 +54,10 @@ namespace InternetTechnologies.Server.Api.Controllers
 
                 await _repository.UpdateAsync(model);
 
-                return Ok(model);
+                return Ok(model); // 200 HTTP StatusCode
             }
 
-            return NoContent();
+            return NoContent(); // 204 HTTP StatusCode
         }
 
         [HttpDelete("{id}")]
@@ -69,10 +69,10 @@ namespace InternetTechnologies.Server.Api.Controllers
 
                 await _repository.DeleteAsync(id);
 
-                return Ok(model);
+                return Ok(model); // 200 HTTP StatusCode
             }
 
-            return NoContent();
+            return NoContent(); // 204 HTTP StatusCode
         }
 
         [HttpGet]
@@ -80,7 +80,7 @@ namespace InternetTechnologies.Server.Api.Controllers
         {
             var collection = (await _repository.GetCollectionAsync()).ToList();
 
-            return Ok(collection);
+            return Ok(collection); // 200 HTTP StatusCode
         }
     }
 }

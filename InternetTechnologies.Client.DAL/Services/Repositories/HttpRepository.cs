@@ -22,6 +22,12 @@ namespace InternetTechnologies.Client.DAL.Services.Repositories
             _httpClient.BaseAddress = new Uri(baseAddress);
         }
 
+        public HttpRepository(string baseAddress, string apiPath)
+            : this(baseAddress)
+        {
+            _apiPath = apiPath;
+        }
+
         public async Task CreateAsync(T item)
         {
             await _httpClient.PostAsync(_apiPath, JsonContent.Create(item));
@@ -31,7 +37,7 @@ namespace InternetTechnologies.Client.DAL.Services.Repositories
 
         public async Task<T> ReadAsync(int id)
         {
-            string getQuery = $"{_apiPath}/{id}";
+            string getQuery = string.Join('/', _apiPath, id);
 
             var response = await _httpClient.GetAsync(getQuery);
 
@@ -42,14 +48,14 @@ namespace InternetTechnologies.Client.DAL.Services.Repositories
 
         public async Task UpdateAsync(T item)
         {
-            string putQuery = $"{_apiPath}/{item.Id}";
+            string putQuery = string.Join('/', _apiPath, item.Id);
 
             await _httpClient.PutAsync(putQuery, JsonContent.Create(item));
         }
 
         public async Task DeleteAsync(int id)
         {
-            string deleteQuery = $"{_apiPath}/{id}";
+            string deleteQuery = string.Join('/', _apiPath, id);
 
             await _httpClient.DeleteAsync(deleteQuery);
         }
